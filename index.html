@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados Quina</title>
+    <title>Resultados Super Sete</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -26,7 +26,7 @@
         .header {
             text-align: center;
             margin-bottom: 30px;
-            color: #224F98; /* Cor azul da Quina */
+            color: #008C45; /* Cor verde da Super Sete */
         }
 
         .grid-container {
@@ -54,7 +54,7 @@
         }
 
         .card-header h3 {
-            color: #224F98; /* Cor azul da Quina */
+            color: #008C45; /* Cor verde da Super Sete */
             font-size: 1.3em;
         }
 
@@ -72,23 +72,34 @@
             text-align: center;
             margin-bottom: 10px;
             font-weight: bold;
-            color: #224F98; /* Cor azul da Quina */
+            color: #008C45; /* Cor verde da Super Sete */
         }
 
-        .numeros {
+        .colunas {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             margin: 15px 0;
-            flex-wrap: wrap;
+        }
+
+        .coluna {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .coluna-numero {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #008C45; /* Cor verde da Super Sete */
         }
 
         .numero {
-            width: 50px;
-            height: 50px;
-            background: #224F98; /* Cor azul da Quina */
+            width: 40px;
+            height: 40px;
+            background: #008C45; /* Cor verde da Super Sete */
             color: white;
-            border-radius: 50%;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -107,7 +118,7 @@
         .acumulou-text {
             font-size: 1.1em;
             font-weight: bold;
-            color: #224F98; /* Cor azul da Quina */
+            color: #008C45; /* Cor verde da Super Sete */
         }
 
         .acumulou-text.acumulado {
@@ -134,7 +145,7 @@
         }
 
         .premiacao-item i {
-            color: #224F98; /* Cor azul da Quina */
+            color: #008C45; /* Cor verde da Super Sete */
             width: 20px;
         }
 
@@ -146,7 +157,7 @@
 
         .ganhadores-titulo {
             font-weight: bold;
-            color: #224F98; /* Cor azul da Quina */
+            color: #008C45; /* Cor verde da Super Sete */
             margin-bottom: 10px;
             text-align: center;
         }
@@ -166,14 +177,14 @@
         }
 
         .ganhadores-item .quantidade {
-            color: #224F98; /* Cor azul da Quina */
+            color: #008C45; /* Cor verde da Super Sete */
             font-weight: bold;
         }
 
         .acumulado-info {
             margin-top: 15px;
             padding: 10px;
-            background-color: #E6EEF9; /* Fundo azul claro */
+            background-color: #E8F5E9; /* Fundo verde claro */
             border-radius: 5px;
             text-align: center;
         }
@@ -184,7 +195,7 @@
         }
 
         .acumulado-info strong {
-            color: #224F98; /* Cor azul da Quina */
+            color: #008C45; /* Cor verde da Super Sete */
         }
 
         .local {
@@ -196,7 +207,7 @@
 
         .local i {
             margin-right: 5px;
-            color: #224F98; /* Cor azul da Quina */
+            color: #008C45; /* Cor verde da Super Sete */
         }
 
         .proximo-sorteio {
@@ -211,14 +222,14 @@
         }
 
         .estimativa {
-            color: #224F98; /* Cor azul da Quina */
+            color: #008C45; /* Cor verde da Super Sete */
             font-weight: bold;
             font-size: 1.1em;
             margin-top: 5px;
         }
 
         .concurso-numero {
-            color: #6085D7; /* Cor azul mais clara para contraste */
+            color: #4CAF50; /* Cor verde mais clara para contraste */
         }
 
         .error-message {
@@ -233,7 +244,7 @@
 
         .error-message button {
             padding: 8px 16px;
-            background-color: #224F98;
+            background-color: #008C45;
             color: white;
             border: none;
             border-radius: 4px;
@@ -242,7 +253,7 @@
         }
 
         .error-message button:hover {
-            background-color: #183C7A;
+            background-color: #00703C;
         }
 
         @media (max-width: 1200px) {
@@ -257,9 +268,13 @@
             }
             
             .numero {
-                width: 44px;
-                height: 44px;
+                width: 35px;
+                height: 35px;
                 font-size: 1em;
+            }
+            
+            .colunas {
+                gap: 5px;
             }
         }
 
@@ -280,13 +295,13 @@
 
         .loading-text {
             margin-top: 15px;
-            color: #224F98;
+            color: #008C45;
             font-weight: bold;
         }
 
         .loader {
             border: 5px solid #f3f3f3;
-            border-top: 5px solid #224F98; /* Cor azul da Quina */
+            border-top: 5px solid #008C45; /* Cor verde da Super Sete */
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -341,7 +356,7 @@
 
         .pagination-btn {
             padding: 8px 16px;
-            background-color: #224F98; /* Cor azul da Quina */
+            background-color: #008C45; /* Cor verde da Super Sete */
             color: white;
             border: none;
             border-radius: 4px;
@@ -351,7 +366,7 @@
         }
 
         .pagination-btn:hover {
-            background-color: #183C7A; /* Tom mais escuro de azul */
+            background-color: #00703C; /* Tom mais escuro de verde */
         }
 
         .pagination-btn:disabled {
@@ -384,7 +399,7 @@
             }
 
             .acumulado-info {
-                background-color: #24375C; /* Azul escuro para modo escuro */
+                background-color: #1C3C26; /* Verde escuro para modo escuro */
                 color: #e0e0e0;
             }
 
@@ -394,7 +409,7 @@
             }
 
             .loading-text {
-                color: #6085D7;
+                color: #4CAF50;
             }
 
             .loading-overlay {
@@ -403,7 +418,7 @@
 
             .loader {
                 border: 5px solid #333;
-                border-top: 5px solid #224F98; /* Cor azul da Quina */
+                border-top: 5px solid #008C45; /* Cor verde da Super Sete */
             }
         }
     </style>
@@ -411,7 +426,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Resultados da Quina</h1>
+            <h1>Resultados da Super Sete</h1>
             <p>Últimos concursos e premiações</p>
         </div>
         
@@ -438,9 +453,9 @@
         // Configurações das APIs
         const API_CONFIG = {
             // APIs oficiais
-            CAIXA_URL: 'https://servicebus2.caixa.gov.br/portaldeloterias/api/quina',
-            HEROKU_URL: 'https://loteriascaixa-api.herokuapp.com/api/quina',
-            BRASIL_URL: 'https://brasilapi.com.br/api/loterias/v1/quina',
+            CAIXA_URL: 'https://servicebus2.caixa.gov.br/portaldeloterias/api/supersete',
+            HEROKU_URL: 'https://loteriascaixa-api.herokuapp.com/api/super-sete',
+            BRASIL_URL: 'https://brasilapi.com.br/api/loterias/v1/super-sete',
             
             // Serviços de proxy CORS
             CORS_PROXY_URLS: [
@@ -573,7 +588,7 @@
 
         // Carregar dados com fallbacks para múltiplas APIs
         async function carregarConcurso(numero = null) {
-            showLoading('Carregando dados da Quina...');
+            showLoading('Carregando dados da Super Sete...');
             
             try {
                 // Define um timeout para caso todas as requisições demorem muito
@@ -706,14 +721,14 @@
                 numeros = dados.dezenas.map(d => parseInt(d, 10));
             } else if (dados.listaDezenas && Array.isArray(dados.listaDezenas)) {
                 numeros = dados.listaDezenas.map(d => parseInt(d, 10));
-            } else if (dados.numeros && Array.isArray(dados.numeros)) {
-                numeros = dados.numeros.map(d => parseInt(d, 10));
+            } else if (dados.dezenasSorteadasOrdemSorteio && Array.isArray(dados.dezenasSorteadasOrdemSorteio)) {
+                numeros = dados.dezenasSorteadasOrdemSorteio.map(d => parseInt(d, 10));
             }
             
-            // Garante que temos 5 números, mesmo que faltantes
-            if (numeros.length < 5) {
+            // Garante que temos 7 números, mesmo que faltantes
+            if (numeros.length < 7) {
                 // Preenche com zeros se faltarem números
-                while (numeros.length < 5) {
+                while (numeros.length < 7) {
                     numeros.push(0);
                 }
                 console.warn('Números insuficientes, preenchidos com zeros:', numeros);
@@ -731,6 +746,14 @@
                 acumulou: dados.acumulou || dados.acumulado || false,
                 localSorteio: dados.local || dados.localSorteio || 'Local não informado',
                 premiacoes: {
+                    seteAcertos: {
+                        ganhadores: premiacoes['7 acertos']?.ganhadores || 0,
+                        valorPremio: premiacoes['7 acertos']?.valorPremio || 0
+                    },
+                    seisAcertos: {
+                        ganhadores: premiacoes['6 acertos']?.ganhadores || 0,
+                        valorPremio: premiacoes['6 acertos']?.valorPremio || 0
+                    },
                     cincoAcertos: {
                         ganhadores: premiacoes['5 acertos']?.ganhadores || 0,
                         valorPremio: premiacoes['5 acertos']?.valorPremio || 0
@@ -742,10 +765,6 @@
                     tresAcertos: {
                         ganhadores: premiacoes['3 acertos']?.ganhadores || 0,
                         valorPremio: premiacoes['3 acertos']?.valorPremio || 0
-                    },
-                    doisAcertos: {
-                        ganhadores: premiacoes['2 acertos']?.ganhadores || 0,
-                        valorPremio: premiacoes['2 acertos']?.valorPremio || 0
                     }
                 },
                 municipiosGanhadores: municipiosGanhadores,
@@ -776,12 +795,14 @@
                 numeros = dados.numeros.map(d => parseInt(d, 10));
             } else if (dados.listaDezenas && Array.isArray(dados.listaDezenas)) {
                 numeros = dados.listaDezenas.map(d => parseInt(d, 10));
+            } else if (dados.dezenasSorteadasOrdemSorteio && Array.isArray(dados.dezenasSorteadasOrdemSorteio)) {
+                numeros = dados.dezenasSorteadasOrdemSorteio.map(d => parseInt(d, 10));
             }
             
-            // Garante que temos 5 números, mesmo que faltantes
-            if (numeros.length < 5) {
+            // Garante que temos 7 números, mesmo que faltantes
+            if (numeros.length < 7) {
                 // Preenche com zeros se faltarem números
-                while (numeros.length < 5) {
+                while (numeros.length < 7) {
                     numeros.push(0);
                 }
                 console.warn('Números insuficientes, preenchidos com zeros:', numeros);
@@ -789,28 +810,33 @@
             
             // Inicializa as premiações com valores padrão
             const premiacoes = {
+                seteAcertos: { ganhadores: 0, valorPremio: 0 },
+                seisAcertos: { ganhadores: 0, valorPremio: 0 },
                 cincoAcertos: { ganhadores: 0, valorPremio: 0 },
                 quatroAcertos: { ganhadores: 0, valorPremio: 0 },
-                tresAcertos: { ganhadores: 0, valorPremio: 0 },
-                doisAcertos: { ganhadores: 0, valorPremio: 0 }
+                tresAcertos: { ganhadores: 0, valorPremio: 0 }
             };
             
             // Preenche com dados da API quando disponíveis
             if (dados.premiacoes && Array.isArray(dados.premiacoes)) {
                 dados.premiacoes.forEach((premiacao, index) => {
-                    if (index === 0) premiacoes.cincoAcertos = {
+                    if (index === 0) premiacoes.seteAcertos = {
                         ganhadores: premiacao.ganhadores || premiacao.numeroDeGanhadores || 0,
                         valorPremio: premiacao.valorPremio || 0
                     };
-                    else if (index === 1) premiacoes.quatroAcertos = {
+                    else if (index === 1) premiacoes.seisAcertos = {
                         ganhadores: premiacao.ganhadores || premiacao.numeroDeGanhadores || 0,
                         valorPremio: premiacao.valorPremio || 0
                     };
-                    else if (index === 2) premiacoes.tresAcertos = {
+                    else if (index === 2) premiacoes.cincoAcertos = {
                         ganhadores: premiacao.ganhadores || premiacao.numeroDeGanhadores || 0,
                         valorPremio: premiacao.valorPremio || 0
                     };
-                    else if (index === 3) premiacoes.doisAcertos = {
+                    else if (index === 3) premiacoes.quatroAcertos = {
+                        ganhadores: premiacao.ganhadores || premiacao.numeroDeGanhadores || 0,
+                        valorPremio: premiacao.valorPremio || 0
+                    };
+                    else if (index === 4) premiacoes.tresAcertos = {
                         ganhadores: premiacao.ganhadores || premiacao.numeroDeGanhadores || 0,
                         valorPremio: premiacao.valorPremio || 0
                     };
@@ -858,10 +884,10 @@
                 numeros = dados.dezenasSorteadasOrdemSorteio.map(d => parseInt(d, 10));
             }
             
-            // Garante que temos 5 números, mesmo que faltantes
-            if (numeros.length < 5) {
+            // Garante que temos 7 números, mesmo que faltantes
+            if (numeros.length < 7) {
                 // Preenche com zeros se faltarem números
-                while (numeros.length < 5) {
+                while (numeros.length < 7) {
                     numeros.push(0);
                 }
                 console.warn('Números insuficientes, preenchidos com zeros:', numeros);
@@ -869,32 +895,38 @@
             
             // Extrair premiações
             let premiacoes = {
+                seteAcertos: { ganhadores: 0, valorPremio: 0 },
+                seisAcertos: { ganhadores: 0, valorPremio: 0 },
                 cincoAcertos: { ganhadores: 0, valorPremio: 0 },
                 quatroAcertos: { ganhadores: 0, valorPremio: 0 },
-                tresAcertos: { ganhadores: 0, valorPremio: 0 },
-                doisAcertos: { ganhadores: 0, valorPremio: 0 }
+                tresAcertos: { ganhadores: 0, valorPremio: 0 }
             };
             
             if (dados.listaRateioPremio && Array.isArray(dados.listaRateioPremio)) {
                 dados.listaRateioPremio.forEach(premio => {
                     const faixa = premio.faixa || premio.descricaoFaixa;
-                    if (faixa === 1 || premio.descricaoFaixa === "5 acertos") {
+                    if (faixa === 1 || premio.descricaoFaixa === "7 acertos") {
+                        premiacoes.seteAcertos = {
+                            ganhadores: parseInt(premio.numeroDeGanhadores || 0),
+                            valorPremio: parseFloat(premio.valorPremio || 0)
+                        };
+                    } else if (faixa === 2 || premio.descricaoFaixa === "6 acertos") {
+                        premiacoes.seisAcertos = {
+                            ganhadores: parseInt(premio.numeroDeGanhadores || 0),
+                            valorPremio: parseFloat(premio.valorPremio || 0)
+                        };
+                    } else if (faixa === 3 || premio.descricaoFaixa === "5 acertos") {
                         premiacoes.cincoAcertos = {
                             ganhadores: parseInt(premio.numeroDeGanhadores || 0),
                             valorPremio: parseFloat(premio.valorPremio || 0)
                         };
-                    } else if (faixa === 2 || premio.descricaoFaixa === "4 acertos") {
+                    } else if (faixa === 4 || premio.descricaoFaixa === "4 acertos") {
                         premiacoes.quatroAcertos = {
                             ganhadores: parseInt(premio.numeroDeGanhadores || 0),
                             valorPremio: parseFloat(premio.valorPremio || 0)
                         };
-                    } else if (faixa === 3 || premio.descricaoFaixa === "3 acertos") {
+                    } else if (faixa === 5 || premio.descricaoFaixa === "3 acertos") {
                         premiacoes.tresAcertos = {
-                            ganhadores: parseInt(premio.numeroDeGanhadores || 0),
-                            valorPremio: parseFloat(premio.valorPremio || 0)
-                        };
-                    } else if (faixa === 4 || premio.descricaoFaixa === "2 acertos") {
-                        premiacoes.doisAcertos = {
                             ganhadores: parseInt(premio.numeroDeGanhadores || 0),
                             valorPremio: parseFloat(premio.valorPremio || 0)
                         };
@@ -978,10 +1010,8 @@
                 // Atualizar mensagem de carregamento
                 showLoading('Carregando dados dos concursos...');
                 
-                // Carregar os concursos simultaneamente
-                concursosExibidos = [];
-                
                 // Carrega os concursos um por um para evitar sobrecarga
+                concursosExibidos = [];
                 for (const num of concursosNecessarios) {
                     try {
                         const concurso = await carregarConcurso(num);
@@ -1017,7 +1047,7 @@
                 concursosExibidos = [];
                 for (let i = 0; i < concursosPorPagina; i++) {
                     try {
-                        const concurso = await carregarConcursoEmergencia(6709 - i); // Um número recente da Quina
+                        const concurso = await carregarConcursoEmergencia(683 - i); // Um número recente da Super Sete
                         if (concurso) concursosExibidos.push(concurso);
                     } catch (e) {
                         console.error('Falha na tentativa de emergência:', e);
@@ -1192,7 +1222,7 @@
                     ganhadoresCidadesHTML = `
                         <div class="ganhadores-container">
                             <div class="ganhadores-titulo">
-                                Ganhadores com 5 acertos (por cidade):
+                                Ganhadores com 7 acertos (por cidade):
                             </div>
                             ${concurso.municipiosGanhadores.map(cidade => `
                                 <div class="ganhadores-item">
@@ -1208,14 +1238,25 @@
                 let acumuladoInfoHTML = '';
                 if (concurso.acumulou && (concurso.valorAcumuladoProximoConcurso > 0 || concurso.valorAcumuladoConcursoEspecial > 0)) {
                     acumuladoInfoHTML = `
-                        <div class="acumulado-info">
+					
+                        <!--
+						<div class="acumulado-info">
                             ${concurso.valorAcumuladoProximoConcurso > 0 ? 
                                 `<p>Valor acumulado para o próximo concurso: <strong>${formatarMoeda(concurso.valorAcumuladoProximoConcurso)}</strong></p>` : ''}
                             ${concurso.valorAcumuladoConcursoEspecial > 0 ? 
-                                `<p>Valor acumulado para o concurso especial de São João: <strong>${formatarMoeda(concurso.valorAcumuladoConcursoEspecial)}</strong></p>` : ''}
+                                `<p>Valor acumulado para concurso especial: <strong>${formatarMoeda(concurso.valorAcumuladoConcursoEspecial)}</strong></p>` : ''}
                         </div>
+						-->
                     `;
                 }
+                
+                // Gerar HTML para as colunas de números
+                const colunasHTML = concurso.numeros.map((num, index) => `
+                    <div class="coluna">
+                        <div class="coluna-numero"> ${index + 1}</div>
+                        <div class="numero">${num}</div>
+                    </div>
+                `).join('');
                 
                 card.innerHTML = `
                     <div class="card-header">
@@ -1225,23 +1266,29 @@
                     
                     <div class="numeros-container">
                         <div class="numeros-label">Números Sorteados</div>
-                        <div class="numeros">
-                            ${concurso.numeros.map(num => `
-                                <div class="numero">${num.toString().padStart(2, '0')}</div>
-                            `).join('')}
+                        <div class="colunas">
+                            ${colunasHTML}
                         </div>
                     </div>
                     
                     <div class="status-premio">
                         <p class="acumulou-text ${concurso.acumulou ? 'acumulado' : ''}">
-                            ${concurso.acumulou ? 'ACUMULOU!' : `${concurso.premiacoes.cincoAcertos.ganhadores} GANHADOR${concurso.premiacoes.cincoAcertos.ganhadores !== 1 ? 'ES' : ''} COM 5 PONTOS`}
+                            ${concurso.acumulou ? 'ACUMULOU!' : `${concurso.premiacoes.seteAcertos.ganhadores} GANHADOR${concurso.premiacoes.seteAcertos.ganhadores !== 1 ? 'ES' : ''} COM 7 ACERTOS`}
                         </p>
                         <p class="premio-principal">
-                            ${concurso.acumulou ? 'Ninguém acertou os 5 números' : `Prêmio: ${formatarMoeda(concurso.premiacoes.cincoAcertos.valorPremio)}`}
+                            ${concurso.acumulou ? 'Ninguém acertou os 7 números' : `Prêmio: ${formatarMoeda(concurso.premiacoes.seteAcertos.valorPremio)}`}
                         </p>
                     </div>
                     
                     <div class="premiacoes">
+                        <div class="premiacao-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>6 acertos: ${concurso.premiacoes.seisAcertos.ganhadores} apostas - ${formatarMoeda(concurso.premiacoes.seisAcertos.valorPremio)}</span>
+                        </div>
+                        <div class="premiacao-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>5 acertos: ${concurso.premiacoes.cincoAcertos.ganhadores} apostas - ${formatarMoeda(concurso.premiacoes.cincoAcertos.valorPremio)}</span>
+                        </div>
                         <div class="premiacao-item">
                             <i class="fas fa-trophy"></i>
                             <span>4 acertos: ${concurso.premiacoes.quatroAcertos.ganhadores} apostas - ${formatarMoeda(concurso.premiacoes.quatroAcertos.valorPremio)}</span>
@@ -1249,10 +1296,6 @@
                         <div class="premiacao-item">
                             <i class="fas fa-trophy"></i>
                             <span>3 acertos: ${concurso.premiacoes.tresAcertos.ganhadores} apostas - ${formatarMoeda(concurso.premiacoes.tresAcertos.valorPremio)}</span>
-                        </div>
-                        <div class="premiacao-item">
-                            <i class="fas fa-trophy"></i>
-                            <span>2 acertos: ${concurso.premiacoes.doisAcertos.ganhadores} apostas - ${formatarMoeda(concurso.premiacoes.doisAcertos.valorPremio)}</span>
                         </div>
                     </div>
                     
@@ -1367,10 +1410,9 @@
             try {
                 // URLs adicionais que podem ser tentadas
                 const urlsAlternativas = [
-                    `https://resultados-loterias-api-ruby.vercel.app/api/quina/latest`,
-                    `https://servicebus2.caixa.gov.br/portaldeloterias/api/quina/${numero || ''}`,
-                    `https://results.service.loteria.net.br/api/quina/${numero || 'latest'}`,
-                    `https://webscrap-loteria-brasil.herokuapp.com/api/quina/${numero || ''}`
+                    `https://servicebus2.caixa.gov.br/portaldeloterias/api/supersete/${numero || ''}`,
+                    `https://results.service.loteria.net.br/api/super-sete/${numero || 'latest'}`,
+                    `https://webscrap-loteria-brasil.herokuapp.com/api/supersete/${numero || ''}`
                 ];
                 
                 // Tenta cada uma das URLs alternativas
@@ -1409,30 +1451,31 @@
                 console.log("Todas as tentativas de emergência falharam, retornando dados simulados");
                 
                 // Se todas as tentativas falharem, retorna um objeto de concurso com dados mínimos
-                const numeroFallback = numero || 6709; // Um número de concurso recente da Quina
+                const numeroFallback = numero || 683; // Um número de concurso recente da Super Sete
                 
                 return {
                     numero: numeroFallback,
-                    data: "17/04/2025",
-                    diaSemana: "Quinta-feira",
-                    numeros: [29, 32, 39, 57, 61], // Dados de exemplo
+                    data: "16/04/2025",
+                    diaSemana: "Quarta-feira",
+                    numeros: [3, 4, 0, 2, 0, 8, 0], // Dados de exemplo baseados no resumo fornecido
                     acumulou: true,
-                    localSorteio: "ESPAÇO DA SORTE em SÃO PAULO-SP",
+                    localSorteio: "Espaço da Sorte em SÃO PAULO-SP",
                     premiacoes: {
-                        cincoAcertos: { ganhadores: 0, valorPremio: 0 },
-                        quatroAcertos: { ganhadores: 32, valorPremio: 11048.96 },
-                        tresAcertos: { ganhadores: 2626, valorPremio: 128.22 },
-                        doisAcertos: { ganhadores: 70489, valorPremio: 4.77 }
+                        seteAcertos: { ganhadores: 0, valorPremio: 0 },
+                        seisAcertos: { ganhadores: 2, valorPremio: 11347.45 },
+                        cincoAcertos: { ganhadores: 31, valorPremio: 1045.84 },
+                        quatroAcertos: { ganhadores: 503, valorPremio: 64.45 },
+                        tresAcertos: { ganhadores: 4790, valorPremio: 5.0 }
                     },
                     municipiosGanhadores: [],
-                    valorArrecadado: 7689657.5,
-                    valorAcumuladoConcursoEspecial: 121170524.53,
-                    valorAcumuladoProximoConcurso: 2850155.7,
+                    valorArrecadado: 548280.0,
+                    valorAcumuladoConcursoEspecial: 0,
+                    valorAcumuladoProximoConcurso: 1391667.52,
                     proximoConcurso: {
-                        data: "19/04/2025",
-                        diaSemana: "Sábado",
+                        data: "23/04/2025",
+                        diaSemana: "Quarta-feira",
                         numero: numeroFallback + 1,
-                        estimativaPremio: 3700000.0
+                        estimativaPremio: 1500000.0
                     }
                 };
             } catch (error) {
